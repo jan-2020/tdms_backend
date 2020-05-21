@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+D:\YASH_Training_Management\YASH-Backup2015-2020\YASH-Internal Training\2020\Jan-2020\projects\tdms\.metadata\.plugins\org.eclipse.jdt.core
+2793749767.index
