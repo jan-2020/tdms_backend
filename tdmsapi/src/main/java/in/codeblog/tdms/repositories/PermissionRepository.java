@@ -14,12 +14,9 @@ import in.codeblog.tdms.domain.Permission;
 public interface PermissionRepository extends CrudRepository<Permission, Long>, JpaRepository<Permission, Long> {
 
 	Permission findPermissionByModuleId(String ModuleId);
-	
+
 	@Query("from Permission where id =?1")
 	Permission findPermissionById(int id);
-
-//	@Override
-//	Iterable<Permission> findAll();
 
 	@Query("from  Permission  where moduleId=?1 ")
 	List<Permission> findByModuleId(String moduleId);

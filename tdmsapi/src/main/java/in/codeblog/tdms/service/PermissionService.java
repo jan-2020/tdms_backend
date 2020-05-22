@@ -32,12 +32,6 @@ public class PermissionService {
 
 	}
 
-//	public Permission findByModuleId(String ModuleId)
-//	{
-//		Permission permission= permissionRepository.findByModuleId(ModuleId);
-//		return permission;
-//		
-//	}
 	public List<Permission> findByModuleId(String moduleId) {
 		return permissionRepository.findByModuleId(moduleId);
 
@@ -49,9 +43,8 @@ public class PermissionService {
 	}
 
 	public void deletePermissionById(int id) {
-	        Permission permission = permissionRepository.findPermissionById(id);
-	        permissionRepository.delete(permission);
-	    }
-		
+		Permission permission = permissionRepository.findPermissionById(id);
+		permissionRepository.delete(permission);
+	}
 
 }

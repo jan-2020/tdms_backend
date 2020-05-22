@@ -38,7 +38,7 @@ public class PermissionController {
 		String result = permissionService.saveOrUpdateProject(permissions);
 		return new ResponseEntity<String>(result, HttpStatus.CREATED);
 	}
-	
+
 	@PostMapping("/thrash")
 	public ResponseEntity<?> movePermissionToThrash(@RequestBody Permission permission) {
 
@@ -61,13 +61,12 @@ public class PermissionController {
 	public List<Permission> findByModuleId(@PathVariable String moduleId) {
 		return permissionService.findByModuleId(moduleId);
 	}
-	
+
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deletePermission(@PathVariable int id) {
 		permissionService.deletePermissionById(id);
 
 		return new ResponseEntity<String>("Project with ID: '" + id + "' was deleted", HttpStatus.OK);
 	}
-
 
 }
