@@ -17,6 +17,8 @@ public class UserSevice {
 	{
 		try {
 			user.setEmail(user.getEmail());
+			user.setRequest(0);
+			user.setRole(0);
 			return userRepository.save(user);
 		}
 		catch (Exception e) {

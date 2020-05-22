@@ -13,7 +13,6 @@ import in.codeblog.tdms.service.GroupService;
 @CrossOrigin
 public class GroupController {
     
-	
 	 @Autowired
 	 private GroupService groupService;
     

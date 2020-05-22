@@ -17,7 +17,7 @@ import in.codeblog.tdms.service.MapValidationErrorService;
 import in.codeblog.tdms.service.UserSevice;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/tdms/user")
 @CrossOrigin
 public class UserController {
 
