@@ -1,7 +1,8 @@
+/*
+ * this is domain 
+ * which travel from layer to layet
+ */
 package in.codeblog.tdms.domain;
-
-
-
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -18,27 +19,35 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Document {
+	   //id of the document
 		@Id
 		@GeneratedValue
 		private Long documentId;
 		@NotBlank(message = "Subject Name required")
+		// subjetc of the documet.
 		private String subject;
 		@NotBlank(message = "Topic name required")
-		
-		 private String topic;
+		//topic of the document
+		private String topic;
 		@NotBlank(message = "Topic should required")
+		//sub toic of the document
 		private String subTopic;
 		@Column(columnDefinition="MEDIUMTEXT")
+		//content of the document
 		private String content;
 		@JsonFormat(pattern = "dd-MM-yyyy")
 		
 		private  String tag;
 		
 		@NotBlank(message = "document name  required")
+		//name of the document
 		private String name;
+		//status of the document
 		int status=0;
+		//date of creation
 		Date created_At;
 		@JsonFormat(pattern = "dd-MM-yyyy")
+		//date of upsation
 		Date updated_At;
 		
 		public Document() {

@@ -1,3 +1,6 @@
+/**
+ * this component have the various mapping to fetch the document.
+ */
 package in.codeblog.tdms.web;
 
 import javax.validation.Valid;
@@ -6,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +27,7 @@ public class DocumentController {
 	DocumentService documentService;
 	@Autowired
 	MapValidationErrorService mapValidationErrorService;
+	//this is use to save the document.
 	@PostMapping("")
 	public ResponseEntity<?> saveDocument(@Valid @RequestBody Document document,BindingResult result)
 	{
@@ -34,12 +37,14 @@ public class DocumentController {
 		Document doc=documentService.saveOrUpdate(document);
 		return new ResponseEntity<Document>(doc, HttpStatus.CREATED);
 	}
+	//this method is used  to get the document by document id.
 	@GetMapping("/{documentId}")
 	public ResponseEntity<?> getDocumentByDocumentId(@PathVariable Long documentId)
 	{
 		Document document=documentService.findByDocumentId(documentId);
 		return new ResponseEntity<Document>(document,HttpStatus.OK);
 	}
+	//this method is used to get the all document.
 	@GetMapping("/all")
 	public Iterable<Document> findAllDocuments()
 	{

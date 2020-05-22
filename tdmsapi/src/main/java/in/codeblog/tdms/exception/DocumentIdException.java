@@ -1,3 +1,6 @@
+/**
+ * this component handle the document id realated exception
+ */
 package in.codeblog.tdms.exception;
 
 import org.springframework.http.HttpStatus;
