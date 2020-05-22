@@ -21,11 +21,11 @@ public class UserController {
     public Iterable<User> findAllProjects(){
  	   return userService.findAllTrainees();
     }
-	@PostMapping("")
-	public ResponseEntity<?> saveAllUsers( User users[]) {
+	@PostMapping("/save{userList,groupId}")
+	public ResponseEntity<?> saveAllUsers(String userList,String groupId) {
 
-		Iterable userList=userService.saveAllUsers(users);
-		return new ResponseEntity<Iterable>(userList, HttpStatus.CREATED);
+		Iterable users=userService.saveAllUsers(userList,groupId);
+		return new ResponseEntity<Iterable>(users, HttpStatus.CREATED);
 	
 	}
 	

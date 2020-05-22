@@ -1,3 +1,7 @@
+/**
+ * @author vijay solanki
+ * 
+ */
 package in.codeblog.tdms.service;
 
 import java.util.ArrayList;
@@ -42,12 +46,21 @@ public class UserService {
 	 * @param users it is the list of users
 	 * @return List of the users
 	 */
-	public Iterable<User> saveAllUsers(User[] users) {
-		for (User user : users) {
-			user.setPaasword("Tdmsapi@2020");
-			user.setUsername(user.getEmail().substring(0, 5) + user.getContactNumber().substring(0, 3));
-			user.setRequest(1);
-			user.setRole(1);
+	public Iterable<User> saveAllUsers(String userList,String groupId) {
+	    String trainees[]=userList.split(";");
+	    User user=new User();
+	    int i=0;
+	    User users[]=new User[trainees.length];
+	    for (String field : trainees) {
+			  String value[]=field.split(",");
+		        user.setName(value[0]);
+		        user.setEmail(value[1]);
+		        user.setContact(value[2]);
+		        user.setPassword("Tdmsapi@2020");
+				user.setUserName(user.getEmail().substring(0, 5) + user.getContact().substring(0, 3));
+				user.setRequest(1);
+				user.setRole(1);
+		users[i++]=user;    
 		}
 
 		return userRepository.saveAll(Arrays.asList(users));
@@ -68,7 +81,6 @@ public class UserService {
 			if (user.getGroupId() == groupId && user.getRole() == 1 && user.getRequest() == 1) {
 				usersWithGroupId.add(user);
 			}
-
 		}
 		return usersWithGroupId;
 	}
