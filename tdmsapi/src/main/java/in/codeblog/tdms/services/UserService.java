@@ -23,4 +23,13 @@ public List<User>getPendingUserRequests()
 	users=null;
 return toSend;
 }
+public void approveOrReject(User user) {
+
+	long userId=user.getUserId();
+	User newUser=userRepository.findById(userId);
+	newUser.setRequest(user.getRequest());
+    newUser.setMessage(user.getMessage());
+	userRepository.save(newUser);
+}
+
 }
