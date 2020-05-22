@@ -1,10 +1,10 @@
-package in.codeblog.tdms;
+package com.yash.ytdms;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TdmsapiApplicationTests {
+class YtdmsApplicationTests {
 
 	@Test
 	void contextLoads() {
