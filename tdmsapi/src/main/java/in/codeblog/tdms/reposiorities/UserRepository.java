@@ -10,6 +10,11 @@ import in.codeblog.tdms.domain.User;
 
 public interface UserRepository extends CrudRepository<User, Long>  {
 	
+	@Override
+	public List<User> findAll();
+	
+    
+    public User findById(long id);
     
 	
 	
