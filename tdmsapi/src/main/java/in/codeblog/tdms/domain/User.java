@@ -32,12 +32,11 @@ public class User {
 	private String password;
 	
 	@Min(10)
-	@Max(12)
 	private long contact;
 	
 	private String message;
 	
-	@Column(nullable = false,columnDefinition = "int default 3")
+	@Column(nullable = false)
 	private int groupId;
 	
 	@Column(columnDefinition = "int default 0")
